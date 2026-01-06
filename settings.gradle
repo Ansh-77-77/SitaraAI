@@ -1,6 +1,8 @@
 pluginManagement {
     repositories {
-        google()        // FIRST
+        google()
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/central" }
         mavenCentral()
         gradlePluginPortal()
     }
@@ -9,7 +11,9 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
-        google()        // FIRST
+        google()
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/central" }
         mavenCentral()
     }
 }
