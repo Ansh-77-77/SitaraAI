@@ -2,35 +2,34 @@ name: Build Android APK
 
 on:
   push:
-    branches: [main]
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Setup JDK
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
 
-      - name: Set up Android SDK
+      - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Set up Gradle 7.6
+      - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: 7.6
 
       - name: Build Debug APK
-        run: |
-          gradle -p app assembleDebug
+        run: gradle -p app assembleDebug
 
-      - name: Upload APK
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: SitaraAI-APK
