@@ -1,6 +1,6 @@
 pluginManagement {
     repositories {
-        google()
+        google()        // FIRST
         mavenCentral()
         gradlePluginPortal()
     }
@@ -9,7 +9,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
-        google()
+        google()        // FIRST
         mavenCentral()
     }
 }
