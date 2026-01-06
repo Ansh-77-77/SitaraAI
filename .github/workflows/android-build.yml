@@ -18,13 +18,17 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      # 🔑 THIS WAS MISSING
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: 7.6
 
       - name: Build Debug APK
-        run: gradle assembleDebug
+        run: gradle :app:assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
