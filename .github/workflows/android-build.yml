@@ -33,11 +33,10 @@ jobs:
 
       # 🔑 FORCE ROOT DIRECTORY
       - name: Build Debug APK
-        working-directory: ${{ github.workspace }}
-        run: |
-          ls -la
-          gradle --version
-          gradle :app:assembleDebug
+  run: |
+    pwd
+    ls -la
+    gradle -p . :app:assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
