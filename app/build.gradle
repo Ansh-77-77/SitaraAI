@@ -1,4 +1,6 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
     namespace "com.sitara.ai"
@@ -13,11 +15,11 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
         }
-        debug {
-            debuggable true
+        release {
+            minifyEnabled false
         }
     }
 }
