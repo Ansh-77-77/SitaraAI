@@ -13,12 +13,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Debug workspace
+      - name: Show project structure
         run: |
           pwd
           ls -la
-          echo "APP DIR:"
-          ls -la app
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -34,13 +32,11 @@ jobs:
         with:
           gradle-version: 7.6
 
-      # ✅ THIS IS THE REAL FIX
       - name: Build Debug APK
         run: |
-          echo "Building from app module"
           gradle -p app assembleDebug
 
-      - name: Upload APK artifact
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: SitaraAI-APK
